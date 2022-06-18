@@ -7,6 +7,13 @@ $des = $_POST['des'];
 $Date = $_POST['Date'];
 $Passengers = $_POST['Passengers'];
 $AirClass = $_POST['AirClass'];
+$PrecAirClass= 0;
+if($AirClass === "Бизнис класа"){
+    $PrecAirClass = 0.25;
+
+}else if($AirClass === "Економска +"){
+    $PrecAirClass = 0.10;
+}
 $luggage = $_POST['luggage'];
 $weight = $_POST['weight'];
 
@@ -25,7 +32,7 @@ if($weight === "30кг-1300ден"){
 $destination = GetDes($des);
 
 $BasePrice = $destination->getBasePrice();
-$Price = $Passengers * $BasePrice + $luggage * $weightPrice;
+$Price = $Passengers * $BasePrice* (1+$PrecAirClass) + $luggage * $weightPrice;
 $SubPoints = 0;
 if(isset($_POST['UsePoints']) && $points<$Price) {
     $Price=$Price-$points;
