@@ -1,4 +1,5 @@
 <?php
+
 require_once '../App/Config/config.php';
 
 include '../App/Views/Header.php';
@@ -11,8 +12,12 @@ if (isset($_GET['page'])) {
     }else if ($_GET['page'] == "signup") {
         include '../App/Views/SignUp.php';
     }
+    else if ($_GET['page'] == "news") {
+        include '../App/Views/News.php';
+    }
 }elseif (isset($_POST['value2'])) {
     include '../App/Views/Payment.php';
+
 }else {
     include '../App/Views/Home.php';
 }
