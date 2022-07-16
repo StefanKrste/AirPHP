@@ -191,59 +191,59 @@ if (isset($_SESSION["points"])){
 
  <button  class="btn btn-primary ml-3 mb-3" onclick="dodadi_let()" >Додади лет</button>
 <?php } ?>
-<form id="forma2" class="row g-3 m-3  p-2 border d-none">
+<form id="forma2" class="row g-3 m-3  p-2 border d-none" action="../App/Controllers/FlightController.php" method="post">
     <div class="w-100 "><h3>Формулар за додавање на  нови летови</h3></div>
     <div class="w-50">
         <div  class="w-50 mr-1">
                 <label>Дестинација</label>
-                <input type="text" class="form-control " id="floatingInputGrid" >
+                <input type="text" class="form-control " id="destinacija" name="destinacija" >
         </div>
         <div  class="w-50 mr-1">
             <label>Базна цена</label>
-                <input type="number" class="form-control " id="floatingInputGri" >
+                <input type="number" class="form-control " id="baznacena" name="baznacena" >
         </div>
     </div>
     <div class="w-75  d-flex">
         <div  class="w-25 mr-1">
 
         <label for="appt">Понеделник</label>
-        <input type="time"  class="form-control" id="appt" name="appt">
+        <input type="time"  class="form-control" id="ponedelnik" name="ponedelnik">
         </div>
         <div class="w-25 mr-1">
 
             <label for="appt">Вторник</label>
-            <input type="time"  class="form-control" id="appt" name="appt">
+            <input type="time"  class="form-control" id="vtornik" name="vtornik">
         </div>
         <div class="w-25 mr-1" >
 
             <label for="appt">Среда</label>
-            <input type="time"  class="form-control" id="appt" name="appt">
+            <input type="time"  class="form-control" id="sreda" name="sreda">
         </div>
         <div class="w-25 mr-1" >
 
             <label for="appt">Четврток</label>
-            <input type="time"  class="form-control" id="appt" name="appt">
+            <input type="time"  class="form-control" id="cetvrtok" name="cetvrtok">
         </div>
         <div class="w-25 mr-1" >
 
             <label for="appt">Петок</label>
-            <input type="time"  class="form-control" id="appt" name="appt">
+            <input type="time"  class="form-control" id="petok" name="petok">
         </div>
         <div class="w-25 mr-1" >
 
             <label for="appt">Сабота</label>
-            <input type="time"  class="form-control" id="appt" name="appt">
+            <input type="time"  class="form-control" id="sabota" name="sabota">
         </div>
         <div class="w-25 mr-1"  >
 
             <label for="appt">Недела</label>
-            <input type="time"  class="form-control" id="appt" name="appt">
+            <input type="time"  class="form-control" id="nedela" name="nedela">
         </div>
 
 
     </div>
     <div class="w-100 mt-5">
-    <button type="button" class="btn btn-secondary ">Додади</button>
+    <button type="submit" class="btn btn-secondary ">Додади</button>
     </div>
 </form>
 

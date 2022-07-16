@@ -15,6 +15,9 @@ if (isset($_GET['page'])) {
     else if ($_GET['page'] == "news") {
         include '../App/Views/News.php';
     }
+    else if ($_GET['page'] == "zaNas") {
+        include '../App/Views/zaNas.php';
+    }
 }elseif (isset($_POST['value2'])) {
     include '../App/Views/Payment.php';
 

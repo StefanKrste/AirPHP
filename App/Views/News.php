@@ -19,7 +19,7 @@ $allNews = array_reverse(GetAllNews());
         <div > <button  class="btn btn-link mx-auto" id="dodaj" onclick="otvori()" >Додади новост</button></div>
 
         <form class="d-none " id="forma" action="../App/Controllers/NovostiController.php" method="post">
-            <div class="border border-primary w-25  p-3 mx-auto mb-3">
+            <div class="border border w-25  p-3 mx-auto mb-3">
                 <div class="w-100 "><h3>Формулар за додавање на новости</h3></div>
             <div class="mb-3 mx-auto w-100  ">
                 <label for="exampleFormControlInput1" class="form-label ">Наслов</label>
@@ -40,7 +40,7 @@ $allNews = array_reverse(GetAllNews());
 <div class="list-group">
     <?php foreach ($allNews as $nov):?>
 
-    <a href="?id=" class="list-group-item list-group-item-action">
+    <a href="#" class="list-group-item list-group-item-action">
         <div class="d-flex w-100 justify-content-between">
             <h5 class="mb-1"><?php echo $nov->getTitle() ?></h5>
             <small class="text-muted"><?php echo $nov->getTime() ?></small>
