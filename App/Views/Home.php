@@ -135,11 +135,121 @@ if (isset($_SESSION["points"])){
             document.getElementById('messageDate').innerHTML = "";
         }
     }
-</script>
 
-<form action="../../Public/index.php" method="post">
-    <div class="h-100 d-flex align-items-center justify-content-center">
-        <div class="w-25 p-3 border border-primary mt-5">
+    function otvori() {
+        var element = document.getElementById("forma");
+        element.classList.toggle("d-block");
+    }
+    function dodadi_let() {
+        var element = document.getElementById("forma2");
+        element.classList.toggle("d-block");
+    }
+</script>
+<div>
+    <div class="w-auto h-auto">
+            <h3 class='w-25 h-auto ml-3'>Летови</h3>
+    </div>
+ <table class="table table-striped h-auto border">
+     <thead>
+       <tr >
+         <th  scope="col">Број на лет</th>
+         <th scope="col">Дестинација</th>
+         <th scope="col">Основна цена</th>
+         <th scope="col">Понеделник</th>
+         <th scope="col">Вторник</th>
+         <th scope="col">Среда</th>
+         <th scope="col">Четврток</th>
+         <th scope="col">Петок</th>
+         <th scope="col">Сабота</th>
+         <th scope="col">Недела</th>
+        </tr>
+     </thead>
+     <tbody>
+      <?php foreach ($allDes as $des):?>
+      <tr >
+         <th scope="row"><?php echo $des->getId() ?></th>
+         <td><?php echo $des->getDestination() ?></td>
+         <td><?php echo $des->getBasePrice() ?></td>
+         <td><?php echo $des->getMo() ?></td>
+         <td><?php echo $des->getTu() ?></td>
+         <td><?php echo $des->getWe() ?></td>
+         <td><?php echo $des->getTh() ?></td>
+         <td><?php echo $des->getFr() ?></td>
+         <td><?php echo $des->getSa() ?></td>
+         <td><?php echo $des->getSu() ?></td>
+      </tr>
+    <?php endforeach; ?>
+    </tbody>
+ </table>
+</div>
+
+ <?php if( isset($_SESSION['role']) && $_SESSION['role'] == "Customer")  { ?>
+
+<button type="button" class="btn btn-primary ml-3 mb-3" data-bs-toggle="button" onclick="otvori()">Купи карта</button>
+<?php } ?>
+<?php if( isset($_SESSION['role']) && $_SESSION['role'] == "Admin")  { ?>
+
+ <button  class="btn btn-primary ml-3 mb-3" onclick="dodadi_let()" >Додади лет</button>
+<?php } ?>
+<form id="forma2" class="row g-3 m-3  p-2 border d-none">
+    <div class="w-100 "><h3>Формулар за додавање на  нови летови</h3></div>
+    <div class="w-50">
+        <div  class="w-50 mr-1">
+                <label>Дестинација</label>
+                <input type="text" class="form-control " id="floatingInputGrid" >
+        </div>
+        <div  class="w-50 mr-1">
+            <label>Базна цена</label>
+                <input type="number" class="form-control " id="floatingInputGri" >
+        </div>
+    </div>
+    <div class="w-75  d-flex">
+        <div  class="w-25 mr-1">
+
+        <label for="appt">Понеделник</label>
+        <input type="time"  class="form-control" id="appt" name="appt">
+        </div>
+        <div class="w-25 mr-1">
+
+            <label for="appt">Вторник</label>
+            <input type="time"  class="form-control" id="appt" name="appt">
+        </div>
+        <div class="w-25 mr-1" >
+
+            <label for="appt">Среда</label>
+            <input type="time"  class="form-control" id="appt" name="appt">
+        </div>
+        <div class="w-25 mr-1" >
+
+            <label for="appt">Четврток</label>
+            <input type="time"  class="form-control" id="appt" name="appt">
+        </div>
+        <div class="w-25 mr-1" >
+
+            <label for="appt">Петок</label>
+            <input type="time"  class="form-control" id="appt" name="appt">
+        </div>
+        <div class="w-25 mr-1" >
+
+            <label for="appt">Сабота</label>
+            <input type="time"  class="form-control" id="appt" name="appt">
+        </div>
+        <div class="w-25 mr-1"  >
+
+            <label for="appt">Недела</label>
+            <input type="time"  class="form-control" id="appt" name="appt">
+        </div>
+
+
+    </div>
+    <div class="w-100 mt-5">
+    <button type="button" class="btn btn-secondary ">Додади</button>
+    </div>
+</form>
+
+<form  id="forma" class="d-none" action="../../Public/index.php" method="post">
+    <div  class="h-100 d-flex align-items-center justify-content-center">
+        <div class="w-40 p-3 border border-primary mt-5">
             <div class="form-group">
                 <label for="from">Дестинација: </label>
                 <?php
@@ -245,7 +355,7 @@ if (isset($_SESSION["points"])){
             <label id="value">Износ: </label>
             <output id="value1" name="value1">0</output>
             <input type="hidden" id="value2" name="value2"/>
-            <button class="ml-5 btn btn-primary">Потврди</button>
+            <button class="ml-5 btn btn-primary" >Потврди</button>
         </div>
     </div>
 </form>

@@ -18,13 +18,21 @@ session_start();
             <li class="nav-item active">
                 <a class="nav-link" aria-current="page" style="color:#0081C6;"   href="../../AirPHP/Public/index.php?page=news">Новости <span class="sr-only">(current)</span></a>
             </li>
+            <li class="nav-item active">
+                <a class="nav-link" aria-current="page" style="color:#0081C6;"   href="../../AirPHP/Public/index.php?page=news">За нас<span class="sr-only">(current)</span></a>
+            </li>
         </ul>
         <div class="form-inline my-2 my-lg-0">
             <?php if (isset($_SESSION["username"])) :?>
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item active">
-                        <label class="nav-link"style="color:#0081C6;"><?php echo 'Корсничко име: '.$_SESSION["username"];?></label>
+                        <label class="nav-link"style="color:#0081C6;"><?php echo 'Корсник: '.$_SESSION["username"];?></label>
                     </li>
+                    <?php if( isset($_SESSION['role']) && $_SESSION['role'] == "Customer")  { ?>
+                    <li class="nav-item active">
+                        <label class="nav-link"style="color:#0081C6;">Мои билети</label>
+                    </li>
+                    <?php } ?>
                     <li class="nav-item active">
                         <label class="nav-link" style="color:#0081C6;"><?php echo 'Поени: '.$_SESSION["points"];?></label>
                     </li>

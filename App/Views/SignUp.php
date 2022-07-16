@@ -21,6 +21,7 @@
                 <input type="password" class="form-control" id="password2" name="password2"
                        placeholder="Повторете ја лозинка" required
                        minlength="8" value="<?php if(isset($_COOKIE['SignUppassword2Cookie'])) echo $_COOKIE['SignUppassword2Cookie'] ;?>">
+
             </div>
             <br>
             <button type="submit" class="btn btn-primary">Регистрирај се</button>

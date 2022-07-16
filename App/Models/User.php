@@ -9,13 +9,14 @@ class User
     protected $password;
     protected $points;
     protected $email;
-
-    public function __construct($id,$username,$password,$points,$email){
+    protected $role;
+    public function __construct($id,$username,$password,$points,$email,$role){
         $this->id=$id;
         $this->username=$username;
         $this->password=$password;
         $this->points=$points;
         $this->email=$email;
+        $this->role=$role;
     }
 
     public function getId()
@@ -42,6 +43,11 @@ class User
     {
         return $this->email;
     }
+    public function getRole()
+    {
+        return $this->role;
+    }
+
 
 
     public function setUsername(string $username)
@@ -63,5 +69,8 @@ class User
     {
         $this->$email = $email;
     }
-
+    public function setRole(string $role)
+    {
+        $this->$role = $role;
+    }
 }

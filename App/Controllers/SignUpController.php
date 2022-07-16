@@ -7,6 +7,7 @@ $password = $_POST['password'];
 $password2 = $_POST['password2'];
 $email = $_POST['email'];
 
+
 $checkUsername = checkUsername($username);
 $checkEmail = checkEmail($email);
 
@@ -44,6 +45,7 @@ if(strlen($username)>=8 && strlen($password)>=8 && filter_var($email, FILTER_VAL
 
     unset($_COOKIE['SignUppassword2Cookie']);
     setcookie('SignUppassword2Cookie', null, -1,'/');
+
 
     header('Location: ../../Public/index.php?page=home');
     exit();

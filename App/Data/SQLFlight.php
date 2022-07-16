@@ -3,6 +3,13 @@
 require_once $_SERVER['DOCUMENT_ROOT']."/App/Config/config.php";
 require_once $_SERVER['DOCUMENT_ROOT']."/App/Models/Flight.php";
 
+function AddNews($title, $description, $time)
+{
+    global $db;
+    $query = "INSERT INTO novosti(naslov,opis,vreme)
+        VALUES(?,?,?) ";
+    $db->prepare($query)->execute([$title, $description, $time]);
+}
 
 function GetAllDes()
 {

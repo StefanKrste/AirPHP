@@ -31,6 +31,7 @@ if($user!=0) {
         $_SESSION['points'] = $user['points'];
         $_SESSION['username'] = $username;
         $_SESSION['email'] = $user['email'];
+        $_SESSION['role'] = $user['role'];
         header('Location: ../../Public/index.php?page=home');
         exit();
     }
