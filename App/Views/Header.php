@@ -12,7 +12,7 @@ session_start();
 <body>
 
 <nav class="navbar navbar-expand-lg navbar-light border-bottom ">
-    <a class="navbar-brand" href='../../AirPHP/Public/index.php?page=home'><img src="../App/Images/logo.PNG"   width="250" height="80" ></a>
+    <a class="navbar-brand" href='../../AirPHP/Public/index.php?page=home'><img src="../../AirPHP/App/Images/logo.PNG"   width="250" height="80" ></a>
 
     <div class="collapse navbar-collapse " id="navbarSupportedContent">
         <ul class="navbar-nav mr-auto">
@@ -30,9 +30,9 @@ session_start();
                         <label class="nav-link  text-primary"><?php echo 'Корсник: '.$_SESSION["username"];?></label>
                     </li>
                     <?php if( isset($_SESSION['role']) && $_SESSION['role'] == "Customer")  { ?>
-                    <li class="nav-item active">
-                        <label class="nav-link  text-primary">Мои билети</label>
-                    </li>
+                        <li class="nav-item active">
+                            <a class="nav-link  text-primary" aria-current="page"   href="../../AirPHP/Public/index.php?page=moiBileti">Мои билети<span class="sr-only">(current)</span></a>
+                        </li>
                     <?php } ?>
                     <?php if( isset($_SESSION['role']) && $_SESSION['role'] == "Customer")  { ?>
                     <li class="nav-item active">

@@ -18,6 +18,12 @@ if (isset($_GET['page'])) {
     else if ($_GET['page'] == "zaNas") {
         include '../App/Views/zaNas.php';
     }
+    else if ($_GET['page'] == "zaNas") {
+        include '../App/Views/zaNas.php';
+    }
+    else if ($_GET['page'] == "moiBileti") {
+        include '../App/Views/moiBileti.php';
+    }
 }elseif (isset($_POST['value2'])) {
     include '../App/Views/Payment.php';
 

@@ -7,6 +7,7 @@ require '../PHPMailer/Exception.php';
 require_once $_SERVER['DOCUMENT_ROOT']."/App/Data/SQLFlight.php";
 require_once $_SERVER['DOCUMENT_ROOT']."/App/Data/SQLUser.php";
 
+
     $name = $_POST['name'];
     $surname = $_POST['surname'];
     $email = $_POST['email'];
@@ -18,8 +19,8 @@ require_once $_SERVER['DOCUMENT_ROOT']."/App/Data/SQLUser.php";
     $weight = $_POST['weight'];
     $Price = $_POST['Price'];
     $SubPoints = $_POST['SubPoints'];
+Ticket($Date,$des,$Passengers,$AirClass,$luggage,$weight,$email,$name,$surname,$Price);
 
-    Ticket($Date,$des,$Passengers,$AirClass,$luggage,$weight,$email,$name,$surname,$Price);
 session_start();
 if(isset($_SESSION['username'])){
     $_SESSION['points'] = $_SESSION['points']-$SubPoints;

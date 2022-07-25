@@ -3,13 +3,7 @@
 require_once $_SERVER['DOCUMENT_ROOT']."/App/Config/config.php";
 require_once $_SERVER['DOCUMENT_ROOT']."/App/Models/Flight.php";
 
-function AddFlight($destination, $base_price, $mo,$tu,$we,$th,$fr,$sa,$su)
-{
-    global $db;
-    $query = "INSERT INTO flights(destination,base_price, mo,tu,we,th,fr,sa,su)
-        VALUES(?,?,?,?,?,?,?,?,?) ";
-    $db->prepare($query)->execute([$destination,$base_price,$mo,$tu,$we,$th,$fr,$sa,$su]);
-}
+
 
 function GetAllDes()
 {

@@ -18,6 +18,11 @@ if (isset($_SESSION["points"])){
 <script>
     window.onload = function() {
         Price();
+        if(getCookie("destinationTicket") !== undefined){
+           otvori();
+            document.getElementById("forma").scrollIntoView();
+        }
+
     };
 
     function selectDes() {
@@ -25,6 +30,7 @@ if (isset($_SESSION["points"])){
         var value = des.options[des.selectedIndex].value;
 
         window.open("../App/Controllers/Destination.php?value=" + value, "_self");
+
     }
 
     function ShowMessage(){
@@ -89,6 +95,10 @@ if (isset($_SESSION["points"])){
     function checkchooseDate(){
         const d = new Date(document.getElementById("Date").value)
         var day = d.getDay();
+        var today= new Date().toLocaleDateString();
+        if(today<=day){
+            return false;
+        }
         if(getCookie("MoTicket") !== undefined){
             if(day===1){
                 return true;
